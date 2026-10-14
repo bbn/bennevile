@@ -1,0 +1,6 @@
+---
+layout: base.njk
+---
+<section class="intro"><p>{{ site.bio }}</p></section>
+<section><h2>Projects</h2><ul class="project-list">{% for project in projects %}{% include "components/project-card.njk" %}{% endfor %}</ul></section>
+<section><h2>Recent notes</h2>{% set list = collections.notes | limit(12) %}{% set showProject = true %}{% include "components/note-list.njk" %}<p><a href="/notes/">All notes →</a></p></section>

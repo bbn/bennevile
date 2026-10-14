@@ -1,0 +1,8 @@
+---
+permalink: /feed.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>{{ site.title }}</title><link>{{ site.url }}/</link><description>{{ site.description }}</description>
+{% for note in collections.notes | limit(50) %}<item><title>{{ note.data.title }}</title><link>{{ note.url | absoluteUrl(site.url) }}</link><guid>{{ note.url | absoluteUrl(site.url) }}</guid><pubDate>{{ note.date | rssDate }}</pubDate><description>{{ note.data.description }}</description></item>
+{% endfor %}</channel></rss>

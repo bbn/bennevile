@@ -1,0 +1,6 @@
+---
+layout: base.njk
+title: Projects
+permalink: /projects/
+---
+<h1>Projects</h1><ul class="project-list">{% for project in projects %}{% include "components/project-card.njk" %}{% endfor %}</ul>

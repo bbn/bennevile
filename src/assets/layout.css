@@ -1,0 +1,10 @@
+/* Layout and components; uses tokens from theme.css. */
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font:var(--size-base)/1.6 var(--font-body)}
+a{color:var(--link)} h1,h2,h3{font-family:var(--font-heading);line-height:1.25} h1{font-size:var(--size-h1)} h2{font-size:var(--size-h2);margin-top:calc(var(--space)*2.5)} h3{font-size:var(--size-h3);margin:.2rem 0}
+.shell{max-width:var(--measure);margin:0 auto;padding:calc(var(--space)*2) var(--space)}
+.site-header{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--rule);padding-bottom:var(--space)}
+.site-name{font-weight:600;text-decoration:none} .site-header nav a{margin-left:var(--space)}
+.site-footer{margin-top:calc(var(--space)*3);padding-top:var(--space);border-top:1px solid var(--rule);color:var(--muted);font-size:.9em}
+.meta,.source{color:var(--muted);font-size:.875em} .meta>*+*{margin-left:.6em} .lede{font-size:1.1em}
+.note-list,.project-list{list-style:none;padding:0} .note-item,.project-card{padding:var(--space) 0;border-bottom:1px solid var(--rule)}
+.note-item .meta,.note-item .summary,.project-card p{margin:.2rem 0} .prose img{max-width:100%} .prose pre{overflow:auto}

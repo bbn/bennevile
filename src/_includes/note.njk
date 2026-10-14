@@ -1,0 +1,15 @@
+---
+layout: base.njk
+---
+{% set proj = projects | projectBySlug(project) %}
+<article class="note">
+  <p class="meta">
+    <span class="kind">{% if kind == "paper" %}Paper{% elif kind == "editorial" %}Editorial{% else %}Note{% endif %}</span>
+    <time datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time>
+    {% if proj %}<a href="/projects/{{ proj.slug }}/">{{ proj.name }}</a>{% endif %}
+  </p>
+  <h1>{{ title }}</h1>
+  {% if description %}<p class="lede">{{ description }}</p>{% endif %}
+  {% if source %}<p class="source">Source: <a href="{{ source.url }}" target="_blank" rel="noopener">{{ source.title }}</a></p>{% endif %}
+  <div class="prose">{{ content | safe }}</div>
+</article>

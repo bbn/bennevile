@@ -1,0 +1,4 @@
+{ "name": "bennevile", "version": "0.1.0", "private": true, "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": { "dev": "eleventy --serve", "prebuild": "node scripts/clean.js", "build": "eleventy", "clean": "node scripts/clean.js" },
+  "devDependencies": { "@11ty/eleventy": "^3.1.6" } }

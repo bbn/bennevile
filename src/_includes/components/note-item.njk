@@ -1,0 +1,10 @@
+{% set proj = projects | projectBySlug(note.data.project) %}
+<li class="note-item">
+  <p class="meta">
+    <span class="kind">{% if note.data.kind == "paper" %}Paper{% elif note.data.kind == "editorial" %}Editorial{% else %}Note{% endif %}</span>
+    <time datetime="{{ note.date | isoDate }}">{{ note.date | readableDate }}</time>
+    {% if proj and showProject %}<a href="/projects/{{ proj.slug }}/">{{ proj.name }}</a>{% endif %}
+  </p>
+  <h3><a href="{{ note.url }}">{{ note.data.title }}</a></h3>
+  {% if note.data.description %}<p class="summary">{{ note.data.description }}</p>{% endif %}
+</li>

@@ -1,0 +1,13 @@
+---
+layout: base.njk
+pagination: { data: projects, size: 1, alias: project }
+permalink: "/projects/{{ project.slug }}/"
+eleventyComputed: { title: "{{ project.name }}", description: "{{ project.tagline }}" }
+---
+<h1>{{ project.name }}</h1>
+<p class="lede">{{ project.description }}</p>
+<p class="meta"><a href="{{ project.url }}">{{ project.url | hostname }}</a></p>
+{% set mine = collections.notes | byProject(project.slug) %}
+{% set eds = mine | byKind("editorial") %}
+{% if eds.length %}<h2>Editorials</h2>{% set list = eds %}{% include "components/note-list.njk" %}{% endif %}
+<h2>Notes</h2>{% set list = mine | byKind("note") %}{% include "components/note-list.njk" %}
